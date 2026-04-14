@@ -109,7 +109,7 @@
         CLEAR_TIME: 3000,
         CLOUD_FREQUENCY: 0.5,
         GAMEOVER_CLEAR_TIME: 750,
-        GAP_COEFFICIENT: 0.6,
+        GAP_COEFFICIENT: 1000.0,
         GRAVITY: 0.6,
         INITIAL_JUMP_VELOCITY: 12,
         INVERT_FADE_DURATION: 12000,
@@ -1313,7 +1313,7 @@
     Obstacle.MAX_OBSTACLE_LENGTH = 3,
 
 
-        Obstacle.prototype = {
+    Obstacle.prototype = {
             /**
              * Initialise the DOM for the obstacle.
              * @param {number} speed
