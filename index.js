@@ -785,6 +785,9 @@
             this.crashed = true;
             this.distanceMeter.acheivement = false;
 
+            this.clearCanvas();
+            this.horizon.draw();
+            this.distanceMeter.update(0, Math.ceil(this.distanceRan));
             this.tRex.update(100, Trex.status.CRASHED);
 
             // Game over panel.
@@ -2596,6 +2599,22 @@
 
             if (updateObstacles) {
                 this.updateObstacles(deltaTime, currentSpeed);
+            }
+        },
+
+        draw: function () {
+            this.horizonLine.draw();
+
+            if (this.nightMode.opacity > 0) {
+                this.nightMode.draw();
+            }
+
+            for (var i = this.clouds.length - 1; i >= 0; i--) {
+                this.clouds[i].draw();
+            }
+
+            for (var j = this.obstacles.length - 1; j >= 0; j--) {
+                this.obstacles[j].draw();
             }
         },
 
